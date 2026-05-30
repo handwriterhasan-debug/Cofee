@@ -1,0 +1,6 @@
+{
+  "name": "Veloura Café",
+  "description": "A premium, minimalist digital coffee experience for Veloura Café, featuring signature items, custom artisan beverage configuration, and elegant interactive elements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
