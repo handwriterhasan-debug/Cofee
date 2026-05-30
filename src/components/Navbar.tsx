@@ -80,23 +80,23 @@ export default function Navbar() {
         id="navbar-header"
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
           scrolled
-            ? 'bg-[#F7F3EE]/95 backdrop-blur-md shadow-sm border-b border-[#E7C9B2]/20 py-4'
+            ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-black/10 py-4'
             : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           
-          {/* LOGO - Veloura Café */}
+          {/* LOGO - KAF Coffee */}
           <a id="nav-logo" href="#home" className="flex items-center space-x-2 group">
-            <span className="w-8 h-8 rounded-full bg-[#6B3E26] flex items-center justify-center text-[#F7F3EE]">
-              <span className="font-serif italic font-extrabold text-sm">V</span>
+            <span className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white">
+              <span className="font-serif italic font-extrabold text-sm">K</span>
             </span>
             <div className="flex flex-col">
-              <span className="font-serif italic font-extrabold text-[#2B1B16] text-xl tracking-tight leading-none group-hover:text-[#6B3E26] transition-colors">
-                Veloura
+              <span className="font-serif italic font-extrabold text-black text-xl tracking-tight leading-none group-hover:text-black/70 transition-colors">
+                KAF
               </span>
-              <span className="font-mono text-[9px] uppercase tracking-widest text-[#C67B3D] font-bold leading-normal">
-                Café • Reserve
+              <span className="font-mono text-[9px] uppercase tracking-widest text-[#555555] font-bold leading-normal">
+                Coffee • Pakistan
               </span>
             </div>
           </a>
@@ -108,10 +108,10 @@ export default function Navbar() {
                 id={`nav-link-${idx}`}
                 key={item.name}
                 href={item.href}
-                className="font-sans text-xs uppercase tracking-widest text-[#1B1B16] font-semibold hover:text-[#C67B3D] transition-colors relative group py-1"
+                className="font-sans text-xs uppercase tracking-widest text-black font-semibold hover:text-black/70 transition-colors relative group py-1"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#C67B3D] transition-all duration-350 group-hover:w-full" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-black transition-all duration-350 group-hover:w-full" />
               </a>
             ))}
           </nav>
@@ -122,7 +122,7 @@ export default function Navbar() {
             <button
               id="search-toggle-btn"
               onClick={() => setSearchOpen(true)}
-              className="p-2.5 rounded-full hover:bg-[#6B3E26]/5 text-[#2B1B16] transition-colors relative"
+              className="p-2.5 rounded-full hover:bg-black/5 text-black transition-colors relative"
               aria-label="Search café menu"
             >
               <Search className="w-4 h-4 stroke-[2.5]" />
@@ -132,7 +132,7 @@ export default function Navbar() {
             <button
               id="cart-toggle-btn"
               onClick={() => setCartOpen(true)}
-              className="px-4 py-2 rounded-full bg-[#2B1B16] hover:bg-[#6B3E26] text-white flex items-center space-x-2 transition-all duration-300 shadow-md shadow-[#2B1B16]/10 relative group"
+              className="px-4 py-2 rounded-full bg-black hover:bg-neutral-800 text-white flex items-center space-x-2 transition-all duration-300 shadow-md shadow-black/15 relative group"
             >
               <div className="relative">
                 <ShoppingBag className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function Navbar() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       exit={{ scale: 0 }}
-                      className="absolute -top-2.5 -right-2.5 text-[10px] bg-[#C67B3D] text-white w-5 h-5 rounded-full flex items-center justify-center font-bold"
+                      className="absolute -top-2.5 -right-2.5 text-[10px] bg-black text-white border border-white/20 w-5 h-5 rounded-full flex items-center justify-center font-bold animate-pulse"
                     >
                       {totalItems}
                     </motion.span>
@@ -198,17 +198,17 @@ export default function Navbar() {
                     setSearchOpen(false);
                     setSearchQuery('');
                   }}
-                  className="p-1.5 rounded-full hover:bg-[#6B3E26]/10 text-[#777777] hover:text-[#1B1B1B] transition-colors"
+                  className="p-1.5 rounded-full hover:bg-black/5 text-neutral-500 hover:text-black transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Live search result window */}
-              <div className="p-6 max-h-[400px] overflow-y-auto bg-[#FFFDF9]">
+              <div className="p-6 max-h-[400px] overflow-y-auto bg-white">
                 {searchQuery.trim() === '' ? (
-                  <div className="text-center py-8 text-[#777777] text-sm">
-                    Type to search Veloura Reserve signature recipes...
+                  <div className="text-center py-8 text-neutral-400 text-sm">
+                    Type to search KAF Coffee signature recipes...
                   </div>
                 ) : searchResults.length === 0 ? (
                   <div className="text-center py-8 text-[#777777] text-sm">
@@ -216,14 +216,14 @@ export default function Navbar() {
                   </div>
                 ) : (
                   <div className="space-y-4">
-                    <p className="font-mono text-[10px] text-[#C67B3D] uppercase tracking-wider font-semibold">
+                    <p className="font-mono text-[10px] text-black uppercase tracking-wider font-semibold">
                       Found {searchResults.length} creations
                     </p>
                     {searchResults.map((drink) => (
                       <div
                         id={`search-result-item-${drink.id}`}
                         key={drink.id}
-                        className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-[#F7F3EE] transition-all cursor-pointer group"
+                        className="flex items-center space-x-4 p-3 rounded-2xl hover:bg-neutral-100 transition-all cursor-pointer group"
                         onClick={() => {
                           setSelectedDrinkForCustomizer(drink);
                           setSearchOpen(false);
@@ -236,19 +236,19 @@ export default function Navbar() {
                         <img
                           src={drink.image}
                           alt={drink.name}
-                          className="w-12 h-12 object-cover rounded-xl border border-[#E7C9B2]/20"
+                          className="w-12 h-12 object-cover rounded-xl border border-black/10"
                         />
                         <div className="flex-1">
-                          <h4 className="font-sans text-sm font-bold text-[#1B1B1B] group-hover:text-[#6B3E26] transition-colors">
+                          <h4 className="font-sans text-sm font-bold text-black group-hover:text-black/75 transition-colors">
                             {drink.name}
                           </h4>
-                          <p className="font-sans text-xs text-[#777777] line-clamp-1">
+                          <p className="font-sans text-xs text-neutral-500 line-clamp-1">
                             {drink.description}
                           </p>
                         </div>
                         <div className="text-right">
-                          <span className="font-mono text-xs font-bold text-[#2B1B16]">${drink.price.toFixed(2)}</span>
-                          <span className="block font-mono text-[10px] text-[#C67B3D]">{drink.calories} Cal</span>
+                          <span className="font-mono text-xs font-bold text-black">${drink.price.toFixed(2)}</span>
+                          <span className="block font-mono text-[10px] text-black font-semibold">{drink.calories} Cal</span>
                         </div>
                       </div>
                     ))}
@@ -268,7 +268,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#2B1B16]/60 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm lg:hidden"
             onClick={() => setMobileMenuOpen(false)}
           >
             <motion.div
@@ -277,15 +277,15 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="absolute right-0 top-0 h-full w-4/5 max-w-md bg-[#FFFDF9] p-8 shadow-2xl flex flex-col"
+              className="absolute right-0 top-0 h-full w-4/5 max-w-md bg-white p-8 shadow-2xl flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between border-b border-[#E7C9B2]/20 pb-6 mb-8">
-                <span className="font-serif italic font-extrabold text-[#2B1B16] text-xl">Veloura Café</span>
+              <div className="flex items-center justify-between border-b border-black/10 pb-6 mb-8">
+                <span className="font-serif italic font-extrabold text-black text-xl">KAF Coffee</span>
                 <button
                   id="close-mobile-drawer"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 rounded-full bg-[#F7F3EE] hover:bg-[#E7C9B2]/20 transition-all text-[#2B1B16]"
+                  className="p-1.5 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-all text-black"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -337,29 +337,29 @@ export default function Navbar() {
               {/* Header */}
               <div className="p-6 border-b border-[#E7C9B2]/20 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <ShoppingBag className="w-5 h-5 text-[#C67B3D]" />
-                  <span className="font-sans text-base font-bold text-[#1B1B1B] uppercase tracking-wider">
+                  <ShoppingBag className="w-5 h-5 text-black" />
+                  <span className="font-sans text-base font-bold text-black uppercase tracking-wider">
                     Your Selection ({totalItems})
                   </span>
                 </div>
                 <button
                   id="close-cart-drawer"
                   onClick={() => setCartOpen(false)}
-                  className="p-1.5 rounded-full hover:bg-[#F7F3EE] transition-colors text-[#777777] hover:text-[#1B1B1B]"
+                  className="p-1.5 rounded-full hover:bg-neutral-100 transition-colors text-neutral-500 hover:text-black"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
 
               {/* Cart Content */}
-              <div id="cart-item-list" className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div id="cart-item-list" className="flex-1 overflow-y-auto p-6 space-y-6 bg-white">
                 {cart.length === 0 ? (
                   <div className="h-full flex flex-col items-center justify-center text-center py-20">
-                    <div className="w-16 h-16 rounded-full bg-[#F7F3EE] flex items-center justify-center text-[#C67B3D] mb-4">
+                    <div className="w-16 h-16 rounded-full bg-neutral-100 flex items-center justify-center text-black mb-4">
                       <ShoppingBag className="w-7 h-7 stroke-[1.5]" />
                     </div>
-                    <h4 className="font-serif italic font-bold text-[#2B1B16] text-lg">Your bag is empty</h4>
-                    <p className="font-sans text-xs text-[#777777] mt-2 max-w-[260px] mx-auto leading-relaxed">
+                    <h4 className="font-serif italic font-bold text-black text-lg">Your bag is empty</h4>
+                    <p className="font-sans text-xs text-neutral-500 mt-2 max-w-[260px] mx-auto leading-relaxed">
                       Begin customizing your handcrafted espresso experience in our featured collection.
                     </p>
                     <button
@@ -369,7 +369,7 @@ export default function Navbar() {
                         const el = document.getElementById('menu');
                         if (el) el.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="mt-6 px-6 py-2.5 rounded-full bg-[#6B3E26] hover:bg-[#2B1B16] text-[#FFFDF9] font-sans text-xs font-semibold tracking-wider uppercase transition-colors shadow-m md"
+                      className="mt-6 px-6 py-2.5 rounded-full bg-black hover:bg-neutral-800 text-white font-sans text-xs font-semibold tracking-wider uppercase transition-colors shadow-md"
                     >
                       Shop Featured Drinks
                     </button>
@@ -379,44 +379,44 @@ export default function Navbar() {
                     <div
                       id={`cart-item-row-${item.id}`}
                       key={item.id}
-                      className="flex items-start space-x-4 pb-6 border-b border-[#E7C9B2]/10 group"
+                      className="flex items-start space-x-4 pb-6 border-b border-black/5 group"
                     >
                       <img
                         src={item.drink.image}
                         alt={item.drink.name}
-                        className="w-16 h-16 object-cover rounded-2xl border border-[#E7C9B2]/20"
+                        className="w-16 h-16 object-cover rounded-2xl border border-black/10"
                       />
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start">
-                          <h4 className="font-sans text-sm font-bold text-[#1B1B1B] leading-tight">
+                          <h4 className="font-sans text-sm font-bold text-black leading-tight">
                             {item.drink.name}
                           </h4>
-                          <span className="font-mono text-sm font-semibold text-[#2B1B16] ml-2">
+                          <span className="font-mono text-sm font-semibold text-black ml-2">
                             ${(item.finalPrice * item.quantity).toFixed(2)}
                           </span>
                         </div>
                         
                         {/* Customization Details Grid Tag list */}
                         <div className="flex flex-wrap gap-1 mt-1.5">
-                          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-[#E7C9B2]/30 text-[#6B3E26]">
+                          <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-neutral-100 text-black border border-black/5">
                             {item.customizations.size}
                           </span>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F7F3EE] text-[#777777]">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 text-black">
                             {item.customizations.milk}
                           </span>
                           {item.customizations.sweetener !== 'None' && (
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#C67B3D]/10 text-[#C67B3D]">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-950 text-white">
                               {item.customizations.sweetener}
                             </span>
                           )}
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F7F3EE] text-[#777777]">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-500">
                             Ice: {item.customizations.iceLevel}
                           </span>
-                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F7F3EE] text-[#777777]">
+                          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-500">
                             Sugar: {item.customizations.sugarLevel}
                           </span>
                           {item.customizations.extraShot && (
-                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#6B3E26]/15 text-[#6B3E26] font-semibold">
+                            <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-neutral-200 text-black font-semibold">
                               +Double Shot
                             </span>
                           )}
@@ -424,21 +424,21 @@ export default function Navbar() {
 
                         {/* Interactive Quantity Stepper */}
                         <div className="flex items-center justify-between mt-3">
-                          <div className="flex items-center border border-[#E7C9B2]/40 rounded-full bg-[#FFFDF9] overflow-hidden">
+                          <div className="flex items-center border border-black/15 rounded-full bg-white overflow-hidden">
                             <button
                               id={`cart-decrease-qty-${item.id}`}
                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                              className="p-1 px-2.5 hover:bg-[#F7F3EE] text-[#777777] hover:text-[#2B1B16] transition-all text-xs"
+                              className="p-1 px-2.5 hover:bg-neutral-100 text-neutral-500 hover:text-black transition-all text-xs"
                             >
                               <Minus className="w-3 h-3" />
                             </button>
-                            <span className="font-mono text-xs font-semibold px-2 text-[#2B1B16]">
+                            <span className="font-mono text-xs font-semibold px-2 text-black">
                               {item.quantity}
                             </span>
                             <button
                               id={`cart-increase-qty-${item.id}`}
                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                              className="p-1 px-2.5 hover:bg-[#F7F3EE] text-[#777777] hover:text-[#2B1B16] transition-all text-xs"
+                              className="p-1 px-2.5 hover:bg-neutral-100 text-neutral-500 hover:text-black transition-all text-xs"
                             >
                               <Plus className="w-3 h-3" />
                             </button>
@@ -446,7 +446,7 @@ export default function Navbar() {
                           <button
                             id={`cart-remove-item-${item.id}`}
                             onClick={() => removeFromCart(item.id)}
-                            className="text-[#777777] hover:text-red-600 p-1.5 rounded-full hover:bg-red-50 transition-colors"
+                            className="text-neutral-500 hover:text-red-600 p-1.5 rounded-full hover:bg-red-50 transition-colors"
                             aria-label="Remove item"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -460,21 +460,21 @@ export default function Navbar() {
 
               {/* Cart Footer Bar with summary details */}
               {cart.length > 0 && (
-                <div className="p-6 bg-[#F7F3EE]/80 border-t border-[#E7C9B2]/20">
+                <div className="p-6 bg-neutral-50 border-t border-black/10">
                   <div className="space-y-2 mb-4">
-                    <div className="flex justify-between text-xs text-[#777777] font-sans font-medium">
+                    <div className="flex justify-between text-xs text-neutral-500 font-sans font-medium">
                       <span>Standard Subtotal</span>
                       <span>${cartSubtotal.toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between text-xs text-[#777777] font-sans font-medium">
+                    <div className="flex justify-between text-xs text-neutral-500 font-sans font-medium">
                       <span>Artisan Roaster Tax (8%)</span>
                       <span>${(cartSubtotal * 0.08).toFixed(2)}</span>
                     </div>
-                    <div className="flex justify-between text-xs text-[#777777] font-sans font-medium">
+                    <div className="flex justify-between text-xs text-neutral-500 font-sans font-medium">
                       <span>Eco-Delivery Fee</span>
-                      <span className="font-mono text-[10px] text-[#C67B3D] uppercase font-bold">Complimentary</span>
+                      <span className="font-mono text-[10px] text-black uppercase font-bold">Complimentary</span>
                     </div>
-                    <div className="flex justify-between pt-2 border-t border-[#E7C9B2]/20 font-sans text-sm font-extrabold text-[#2B1B16]">
+                    <div className="flex justify-between pt-2 border-t border-black/10 font-sans text-sm font-extrabold text-black">
                       <span>Grand Total</span>
                       <span className="font-mono text-base">${(cartSubtotal * 1.08).toFixed(2)}</span>
                     </div>
@@ -485,7 +485,7 @@ export default function Navbar() {
                     id="cart-checkout-btn"
                     onClick={handleCheckout}
                     disabled={checkoutStep === 'checking'}
-                    className="w-full py-4 rounded-full bg-[#2B1B16] hover:bg-[#C67B3D] disabled:bg-[#777777] text-white font-sans text-xs font-bold tracking-widest uppercase transition-all duration-300 shadow-lg shadow-[#2B1B16]/10 flex items-center justify-center space-x-2"
+                    className="w-full py-4 rounded-full bg-black hover:bg-neutral-800 disabled:bg-neutral-400 text-white font-sans text-xs font-bold tracking-widest uppercase transition-all duration-300 shadow-lg shadow-black/10 flex items-center justify-center space-x-2"
                   >
                     {checkoutStep === 'checking' ? (
                       <>
@@ -502,68 +502,68 @@ export default function Navbar() {
               {/* checkout screen success overlay state */}
               <AnimatePresence>
                 {checkoutStep === 'success' && (
-                  <motion.div
-                    id="checkout-success-view"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="absolute inset-0 bg-[#FFFDF9] z-50 flex flex-col items-center justify-center p-8 text-center overflow-hidden"
-                  >
-                    {isFirstCheckout && <CheckoutConfetti />}
+            <motion.div
+              id="checkout-success-view"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-white z-50 flex flex-col items-center justify-center p-8 text-center overflow-hidden"
+            >
+              {isFirstCheckout && <CheckoutConfetti />}
 
-                    <motion.div
-                      initial={{ scale: 0.6, rotate: -15, zIndex: 20 }}
-                      animate={{ scale: 1, rotate: 0 }}
-                      className="w-16 h-16 rounded-full bg-[#C67B3D] text-white flex items-center justify-center mb-6 shadow-lg shadow-[#C67B3D]/20 z-20"
-                    >
-                      <Check className="w-8 h-8 stroke-[2.5]" />
-                    </motion.div>
-                    <h3 className="font-serif italic font-extrabold text-[#2B1B16] text-2xl z-20">
-                      Veloura Confirmed
-                    </h3>
-                    
-                    {isFirstCheckout && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 5 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block mt-2 px-3 py-1 bg-[#C67B3D]/10 rounded-full border border-[#C67B3D]/25 relative z-20"
-                      >
-                        <span className="font-mono text-[9px] text-[#C67B3D] uppercase font-extrabold tracking-widest flex items-center justify-center gap-1">
-                          🎉 First-Order Celebration
-                        </span>
-                      </motion.div>
-                    )}
+              <motion.div
+                initial={{ scale: 0.6, rotate: -15, zIndex: 20 }}
+                animate={{ scale: 1, rotate: 0 }}
+                className="w-16 h-16 rounded-full bg-black text-white flex items-center justify-center mb-6 shadow-lg shadow-black/20 z-20"
+              >
+                <Check className="w-8 h-8 stroke-[2.5]" />
+              </motion.div>
+              <h3 className="font-serif italic font-extrabold text-black text-2xl z-20">
+                KAF Confirmed
+              </h3>
+              
+              {isFirstCheckout && (
+                <motion.div
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="inline-block mt-2 px-3 py-1 bg-neutral-100 rounded-full border border-black/10 relative z-20"
+                >
+                  <span className="font-mono text-[9px] text-black uppercase font-extrabold tracking-widest flex items-center justify-center gap-1">
+                    🎉 First-Order Celebration
+                  </span>
+                </motion.div>
+              )}
 
-                    <p className="font-mono text-[10px] text-[#C67B3D] font-bold uppercase tracking-widest mt-2 z-20">
-                      Token #VEL-986D
-                    </p>
-                    <p className="font-sans text-xs text-[#777777] mt-4 max-w-xs leading-relaxed relative z-20">
-                      Your premium barista team has been notified. Handcrafted creation is underway using organic single-origin beans. Expect your gourmet drink in 12 minutes!
-                    </p>
+              <p className="font-mono text-[10px] text-neutral-500 font-bold uppercase tracking-widest mt-2 z-20">
+                Token #KAF-986D
+              </p>
+              <p className="font-sans text-xs text-neutral-500 mt-4 max-w-xs leading-relaxed relative z-20">
+                Your premium barista team has been notified. Handcrafted creation is underway using organic single-origin beans. Expect your gourmet drink in 12 minutes!
+              </p>
 
-                    <div className="w-full bg-[#F7F3EE] p-4 rounded-2xl border border-[#E7C9B2]/30 my-6 text-left relative z-20">
-                      <p className="font-mono text-[10px] text-[#C67B3D] uppercase tracking-wider font-bold mb-2">Preparation timeline</p>
-                      <div className="space-y-2 font-sans text-xs">
-                        <div className="flex justify-between text-[#1B1B1B]">
-                          <span>• Water extraction profiles calibrated</span>
-                          <span className="font-semibold text-green-600">Complete</span>
-                        </div>
-                        <div className="flex justify-between text-[#1B1B1B]">
-                          <span>• Madagascar Sweet cream froth</span>
-                          <span className="font-semibold text-[#C67B3D] animate-pulse">Blending</span>
-                        </div>
-                      </div>
-                    </div>
+              <div className="w-full bg-neutral-50 p-4 rounded-2xl border border-black/10 my-6 text-left relative z-20">
+                <p className="font-mono text-[10px] text-black uppercase tracking-wider font-bold mb-2">Preparation timeline</p>
+                <div className="space-y-2 font-sans text-xs">
+                  <div className="flex justify-between text-black">
+                    <span>• Water extraction profiles calibrated</span>
+                    <span className="font-semibold text-green-600">Complete</span>
+                  </div>
+                  <div className="flex justify-between text-black">
+                    <span>• Madagascar Sweet cream froth</span>
+                    <span className="font-semibold text-neutral-500 animate-pulse">Blending</span>
+                  </div>
+                </div>
+              </div>
 
-                    <button
-                      id="close-success-dialog-btn"
-                      onClick={handleCloseSuccess}
-                      className="px-8 py-3 rounded-full bg-[#2B1B16] hover:bg-[#6B3E26] text-white font-sans text-xs font-bold uppercase tracking-widest transition-colors shadow-md relative z-20"
-                    >
-                      Done & Back to Café
-                    </button>
-                  </motion.div>
+              <button
+                id="close-success-dialog-btn"
+                onClick={handleCloseSuccess}
+                className="px-8 py-3 rounded-full bg-black hover:bg-neutral-800 text-white font-sans text-xs font-bold uppercase tracking-widest transition-colors shadow-md relative z-20"
+              >
+                Done & Back to Café
+              </button>
+            </motion.div>
                 )}
               </AnimatePresence>
             </motion.div>

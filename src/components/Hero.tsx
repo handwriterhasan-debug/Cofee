@@ -128,13 +128,13 @@ export default function Hero() {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-[#6B3E26]/8 rounded-full filter blur-[100px] pointer-events-none"
+        className="absolute bottom-10 right-10 w-[350px] h-[350px] bg-black/5 rounded-full filter blur-[100px] pointer-events-none"
       />
 
       {/* Abstract background giant typography */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none opacity-[0.015] w-full text-center">
         <h1 className="font-serif italic font-black text-[15rem] leading-none uppercase tracking-tighter">
-          Veloura
+          KAF
         </h1>
       </div>
 
@@ -147,11 +147,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-[#E7C9B2]/30 shadow-xs"
+            className="inline-flex items-center space-x-2 bg-white/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-black/10 shadow-xs"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#C67B3D] animate-spin" />
-            <span className="font-mono text-[9px] uppercase tracking-widest text-[#2B1B16] font-extrabold">
-              Veloura Reserve • Summer 2026 Collection
+            <Sparkles className="w-3.5 h-3.5 text-black animate-spin" />
+            <span className="font-mono text-[9px] uppercase tracking-widest text-black font-extrabold">
+              KAF Coffee • Islamabad, Pakistan
             </span>
           </motion.div>
 
@@ -160,10 +160,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-[#2B1B16] leading-[1.05] font-extrabold max-w-xl mx-auto lg:mx-0"
+            className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-black leading-[1.05] font-extrabold max-w-xl mx-auto lg:mx-0"
           >
             Crafted <br />
-            <span className="font-sans not-italic text-[#6B3E26]">Coffee </span> 
+            <span className="font-sans not-italic text-neutral-600">Coffee </span> 
              Experiences.
           </motion.h2>
 
@@ -186,14 +186,14 @@ export default function Hero() {
             <a
               id="hero-explore-menu-btn"
               href="#menu"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#2B1B16] hover:bg-[#6B3E26] text-[#FFFDF9] font-sans text-xs font-bold tracking-widest uppercase transition-all duration-350 shadow-lg shadow-[#2B1B16]/10 flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-black hover:bg-neutral-800 text-white font-sans text-xs font-bold tracking-widest uppercase transition-all duration-350 shadow-lg shadow-black/15 flex items-center justify-center space-x-2"
             >
               <span>Explore Premium Menu</span>
             </a>
             <button
               id="hero-order-custom-btn"
               onClick={handleOrderLatest}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-[#F7F3EE] text-[#2B1B16] border border-[#E7C9B2]/40 font-sans text-xs font-bold tracking-widest uppercase transition-all duration-350 flex items-center justify-center space-x-2 shadow-xs group"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-neutral-100 text-black border border-black/15 font-sans text-xs font-bold tracking-widest uppercase transition-all duration-350 flex items-center justify-center space-x-2 shadow-xs group"
             >
               <span>Customizer Board</span>
               <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -205,19 +205,19 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="grid grid-cols-3 gap-6 pt-10 border-t border-[#E7C9B2]/30 max-w-sm mx-auto lg:mx-0 text-left"
+            className="grid grid-cols-3 gap-6 pt-10 border-t border-black/10 max-w-sm mx-auto lg:mx-0 text-left"
           >
             <div>
-              <span className="block font-serif italic text-xl font-bold text-[#6B3E26]">98 pts</span>
-              <span className="block font-sans text-[10px] uppercase tracking-widest text-[#777777] font-medium mt-1">Roast Rating</span>
+              <span className="block font-serif italic text-xl font-bold text-black font-extrabold">98 pts</span>
+              <span className="block font-sans text-[10px] uppercase tracking-widest text-neutral-500 font-medium mt-1">Roast Rating</span>
             </div>
             <div>
-              <span className="block font-serif italic text-xl font-bold text-[#6B3E26]">100%</span>
-              <span className="block font-sans text-[10px] uppercase tracking-widest text-[#777777] font-medium mt-1">Sustain Sourced</span>
+              <span className="block font-serif italic text-xl font-bold text-black font-extrabold">100%</span>
+              <span className="block font-sans text-[10px] uppercase tracking-widest text-neutral-500 font-medium mt-1">Sustain Sourced</span>
             </div>
             <div>
-              <span className="block font-serif italic text-xl font-bold text-[#6B3E26]">0:20h</span>
-              <span className="block font-sans text-[10px] uppercase tracking-widest text-[#777777] font-medium mt-1">Slow Steeped</span>
+              <span className="block font-serif italic text-xl font-bold text-black font-extrabold">0:20h</span>
+              <span className="block font-sans text-[10px] uppercase tracking-widest text-neutral-500 font-medium mt-1">Slow Steeped</span>
             </div>
           </motion.div>
 
@@ -227,7 +227,7 @@ export default function Hero() {
         <div id="hero-beverage-showcase" className="lg:col-span-6 relative flex items-center justify-center min-h-[460px]">
           
           {/* Main big graphic glow circle behind cup */}
-          <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-[#E7C9B2]/40 to-[#6B3E26]/20 shadow-xl blur-md pointer-events-none" />
+          <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-neutral-200/40 to-neutral-500/20 shadow-xl blur-md pointer-events-none" />
 
           {/* Centerpiece Beverage Video Loop in 16:9 landscape aspect ratio */}
           <motion.div
@@ -240,7 +240,7 @@ export default function Hero() {
               transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } 
             }}
             transition={{ type: 'spring', damping: 20, stiffness: 100, delay: 0.2 }}
-            className="relative z-20 w-full max-w-md sm:max-w-lg aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl shadow-[#6B3E26]/10 border border-white/60 ring-8 ring-white/20 select-none group cursor-pointer bg-[#DFD3C6]"
+            className="relative z-20 w-full max-w-md sm:max-w-lg aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl shadow-black/10 border border-white/60 ring-8 ring-white/20 select-none group cursor-pointer bg-neutral-900"
           >
             <video
               id="hero-featured-cup-video"
@@ -252,11 +252,11 @@ export default function Hero() {
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103 pointer-events-none"
             />
             {/* Dark gradient overlay on bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2B1B16]/95 via-[#2B1B16]/30 to-transparent flex flex-col justify-end p-6" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-6" />
             
             {/* Text on card */}
             <div className="absolute bottom-6 left-6 right-6 text-white text-left">
-              <span className="font-mono text-[9px] uppercase tracking-widest text-[#E7C9B2] font-semibold">Interactive Brew Loop</span>
+              <span className="font-mono text-[9px] uppercase tracking-widest text-neutral-400 font-semibold">Interactive Brew Loop</span>
               <h3 className="font-serif italic font-semibold text-lg sm:text-xl leading-tight mt-1">Under-Ice Press Brew</h3>
             </div>
           </motion.div>
@@ -276,11 +276,11 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             className="absolute -top-1 right-2 sm:right-10 z-30 glass-panel p-4 rounded-2xl shadow-lg border border-white/60 max-w-[170px] cursor-default"
           >
-            <div className="flex items-center space-x-2 text-[#C67B3D] mb-1">
-              <Zap className="w-3.5 h-3.5 fill-[#C67B3D]" />
+            <div className="flex items-center space-x-2 text-black mb-1">
+              <Zap className="w-3.5 h-3.5 fill-black text-black" />
               <span className="font-mono text-[9px] uppercase tracking-widest font-extrabold">Nutrition Specs</span>
             </div>
-            <p className="font-sans text-xs font-bold text-[#2B1B16] leading-tight">110 kcal</p>
+            <p className="font-sans text-xs font-bold text-black leading-tight">110 kcal</p>
             <span className="block font-sans text-[9px] text-[#777777] mt-0.5">Steeped in cold water, 50% Organic sweetener cane</span>
           </motion.div>
 
@@ -299,7 +299,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             className="absolute bottom-4 left-2 sm:left-4 z-30 glass-panel p-4 rounded-2xl shadow-lg border border-white/60 max-w-[190px] cursor-default"
           >
-            <div className="flex items-center space-x-2 text-[#6B3E26] mb-1.5">
+            <div className="flex items-center space-x-2 text-black mb-1.5">
               <Award className="w-4 h-4" />
               <span className="font-mono text-[9px] uppercase tracking-widest font-extrabold">Reserve Blend</span>
             </div>
@@ -319,12 +319,12 @@ export default function Hero() {
               ease: "easeInOut"
             }}
             whileHover={{ scale: 1.12 }}
-            className="absolute bottom-20 -right-2 sm:-right-6 z-30 bg-[#2B1B16] text-[#FFFDF9] p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-2xl text-center cursor-pointer hover:bg-[#C67B3D] transition-all duration-300"
+            className="absolute bottom-20 -right-2 sm:-right-6 z-30 bg-black text-white p-4 rounded-full w-24 h-24 flex flex-col items-center justify-center shadow-2xl text-center cursor-pointer hover:bg-neutral-850 transition-all duration-300"
             onClick={handleOrderLatest}
           >
-            <Calendar className="w-4 h-4 text-[#D9B9A0] mb-1" />
+            <Calendar className="w-4 h-4 text-white/70 mb-1" />
             <span className="font-sans text-[8px] uppercase tracking-widest font-bold leading-none">Customize Now</span>
-            <span className="font-mono text-[9px] text-[#E7C9B2] font-semibold mt-0.5">Barista Panel</span>
+            <span className="font-mono text-[9px] text-neutral-400 font-semibold mt-0.5">Barista Panel</span>
           </motion.div>
 
         </div>

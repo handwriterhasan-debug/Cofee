@@ -37,19 +37,19 @@ export function CoffeeProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart from localStorage if present
   useEffect(() => {
-    const saved = localStorage.getItem('veloura_cart');
+    const saved = localStorage.getItem('kaf_cart') || localStorage.getItem('veloura_cart');
     if (saved) {
       try {
         setCart(JSON.parse(saved));
       } catch (e) {
-        console.error('Failed to restore Veloura Café Cart', e);
+        console.error('Failed to restore KAF Coffee Cart', e);
       }
     }
   }, []);
 
   const saveCart = (newCart: CartItem[]) => {
     setCart(newCart);
-    localStorage.setItem('veloura_cart', JSON.stringify(newCart));
+    localStorage.setItem('kaf_cart', JSON.stringify(newCart));
   };
 
   const addToCart = (drink: Drink, opts: CustomizeOptions, finalPrice: number, qty: number) => {

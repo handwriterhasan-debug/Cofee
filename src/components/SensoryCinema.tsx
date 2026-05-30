@@ -263,8 +263,8 @@ export default function SensoryCinema() {
       />
 
       {/* Dynamic cinema theater subtle backdrop gradients */}
-      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C67B3D]/30 to-transparent" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[70%] h-[70%] bg-gradient-to-b from-[#C67B3D]/10 to-transparent blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[70%] h-[70%] bg-gradient-to-b from-white/5 to-transparent blur-[120px] pointer-events-none rounded-full" />
       
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#FFFDF9_1px,transparent_1px)] [background-size:24px_24px]" />
@@ -280,9 +280,9 @@ export default function SensoryCinema() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center space-x-2 px-3 py-1 bg-white/5 rounded-full border border-white/10"
           >
-            <Film className="w-3.5 h-3.5 text-[#C67B3D]" />
-            <span className="font-mono text-[9px] uppercase tracking-widest text-[#D9B9A0] font-extrabold">
-              Veloura Artistry Cinema • Living Canvas
+            <Film className="w-3.5 h-3.5 text-white" />
+            <span className="font-mono text-[9px] uppercase tracking-widest text-neutral-400 font-extrabold">
+              KAF Artistry Cinema • Living Canvas
             </span>
           </motion.div>
 

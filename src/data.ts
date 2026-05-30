@@ -117,7 +117,7 @@ export const TESTIMONIALS = [
     name: 'Alexander Sterling',
     role: 'Creative Director, London',
     rating: 5,
-    comment: 'Veloura Cafe is the Apple of visual coffee experiences. The Matcha Espresso Fusion is absolute perfection—perfectly balanced layers and pristine flavor notes.',
+    comment: 'KAF Coffee is the Apple of visual coffee experiences. The Matcha Espresso Fusion is absolute perfection—perfectly balanced layers and pristine flavor notes.',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120'
   },
   {
